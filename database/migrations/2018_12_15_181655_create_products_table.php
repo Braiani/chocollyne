@@ -17,12 +17,17 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->string('slug');
-            $table->string('sabor')->nullable();
             $table->text('descricao')->nullable();
-            $table->double('preco');
-            $table->integer('estoque')->nullable();
             $table->string('imagem')->nullable();
+            $table->integer('categoria_id')->unsigned()->nullable();
+            $table->integer('ativo')->default(true);
+            $table->double('preco');
+            $table->string('sabor')->nullable();
+            $table->integer('estoque')->nullable();
+            $table->integer('prazo_confeccao')->default(0);
             $table->timestamps();
+            
+            $table->foreign('categoria_id')->references('id')->on('categorias');
         });
     }
 

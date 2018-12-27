@@ -10,16 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'PublicController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('admin.home');
-Route::get('/pesquisar/{produto?}', 'PublicController@pesquisa')->name('product.search');
-Route::get('/carrinho', 'PublicController@carrinho')->name('cart');
-Route::get('/sobre-nos', 'PublicController@sobre')->name('about');
-Route::get('/produtos', 'PublicController@show_all')->name('shop');
-Route::get('/produto/{produto}', 'PublicController@show')->name('product.show');
-
+// Rotas para ambiente administrativo usuário comum
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('admin.home');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+Route::get('/', 'PublicController@index')->name('home');
+Route::get('/sobre-nos', 'PagesController@sobre')->name('about');
+
+Route::group(['prefix' => 'carrinho'], function () {
+    Route::get('/', 'CarrinhoController@carrinho')->name('cart');
+    Route::post('/atualizar', 'CarrinhoController@atualizarCarrinho')->name('update.cart');
+    Route::get('/{produto}/remover', 'CarrinhoController@removerCarrinho')->name('delete.cart');
+    Route::post('/{produto}', 'CarrinhoController@adicionarCarrinho')->name('add.cart');
+    Route::get('/finalizar', 'CarrinhoController@finalizar')->name('cart.finish');
+});
+
+Route::post('/cupom/validar', 'CupomController@validar')->name('cupom.validar');
+
+Route::get('/pesquisar/{produto?}', 'ShopController@pesquisa')->name('product.search');
+Route::get('/produtos', 'ShopController@showAll')->name('shop');
+Route::get('/categoria/{categoria}', 'ShopController@showCategoria')->name('categoria.show');
+Route::get('/produto/{produto}', 'ShopController@show')->name('product.show');

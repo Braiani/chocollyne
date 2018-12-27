@@ -17,12 +17,13 @@
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
 
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	@if (isset($destaques))
 	<style>
 		.background-image{
 			background-image: url(@yield('feat.image', '/images/hero_1.jpg'));
 		}
 	</style>
+	@endif
 	@stack('css')
     
   </head>

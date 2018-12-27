@@ -26,7 +26,13 @@
 						<li>
 						<a href="{{ route('cart') }}" class="site-cart">
 							<span class="icon icon-shopping_cart"></span>
-							<span class="count">2</span>
+							<span class="count">
+								@if (Cookie::has(env('APP_NAME') . '_carrinho'))
+									{{ json_decode(Cookie::get(env('APP_NAME') . '_carrinho'))->quantidade }}
+								@else
+									0
+								@endif
+							</span>
 						</a>
 						</li> 
 						<li class="d-inline-block d-md-none ml-md-0">

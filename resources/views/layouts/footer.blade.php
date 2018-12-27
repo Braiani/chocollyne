@@ -32,7 +32,7 @@
 		<div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
 		<h3 class="footer-heading mb-4">Promoção</h3>
 			<a href="#" class="block-6">
-				<img src="images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
+				<img src="{{asset('images/hero_1.jpg')}}" alt="Image placeholder" class="img-fluid rounded mb-4">
 				<h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
 				<p>Promo from  nuary 15 &mdash; 25, 2019</p>
 			</a>
@@ -43,7 +43,7 @@
 			<ul class="list-unstyled">
 				<li class="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
 				<li class="phone"><a href="tel://5567981707696">+55 67 98170-7696</a></li>
-				<li class="email">contato@chocollyne.local</li>
+				<li class="email"><a href="mailto:contato@chocollyne.local">contato@chocollyne.local</a></li>
 			</ul>
 		</div>
 
