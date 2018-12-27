@@ -129,7 +129,10 @@
 							</div>
 							<div class="col-md-6 text-right">
 								@if (isset($desconto))
-								<strong class="text-black">R$ {{ $desconto }}</strong>
+								@php
+									$total = (real) $subTotal - ((real) $subTotal * ((real) $desconto / 100))
+								@endphp
+								<strong class="text-black">R$ {{ ((real) $subTotal * ((real) $desconto / 100)) }}</strong>
 								@else
 								<strong class="text-black">R$ 0.00</strong>
 								@endif
@@ -141,7 +144,7 @@
 							</div>
 							<div class="col-md-6 text-right">
 								@if (isset($desconto))
-								<strong class="text-black">R$ {{ (real) $subTotal - (real) $desconto }}</strong>
+								<strong class="text-black">R$ {{ $total }}</strong>
 								@else
 								<strong class="text-black">R$ {{ $subTotal }}</strong>
 								@endif
