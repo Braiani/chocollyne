@@ -121,7 +121,7 @@ return [
     */
     'custom' => [
         'qtdade' => [
-            'min' => 'O campo :attribute deve ter pelo menos :min.',
+            'min' => 'O campo :attribute deve ter pelo menos :min produto.',
         ],
         'qtdade.*' => [
             'min' => 'O campo :attribute deve conter todos os itens com pelo menos :min.',
