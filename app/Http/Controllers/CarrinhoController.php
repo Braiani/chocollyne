@@ -51,9 +51,12 @@ class CarrinhoController extends Controller
             $this->setCookie(env('APP_NAME') . '_carrinho', json_encode($data));
         } else {
             $data = json_decode($request->cookie(env('APP_NAME') . '_carrinho'));
-            $data->quantidade += 1;
-            $data->items->$produto = $request->qtdade;
-            
+            if (property_exists($data->items, $produto)) {
+                $data->items->$produto += $request->qtdade;
+            }else{
+                $data->quantidade += 1;
+                $data->items->$produto = $request->qtdade;
+            }
             $this->setCookie(env('APP_NAME') . '_carrinho', json_encode($data));
         }
 
