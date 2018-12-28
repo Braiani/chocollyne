@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Session;
 
 class CarrinhoController extends Controller
 {
@@ -21,8 +20,8 @@ class CarrinhoController extends Controller
         } else {
             $produtos = null;
         }
-        if (Session::has('desconto')) {
-            $desconto = Session::get('desconto')->desconto;
+        if ($request->session()->has('desconto') and session('desconto.validacao')) {
+            $desconto = session('desconto')['desconto'];
         } else {
             $desconto = null;
         }

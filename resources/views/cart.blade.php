@@ -22,6 +22,7 @@
 		</div>
 	</div>
 	@endif
+	@includeWhen(session()->has('desconto'),'layouts.desconto-alert')
 	@if ($produtos != null)
 	@php
 		$data = json_decode(Cookie::get(env('APP_NAME') . '_carrinho'));
