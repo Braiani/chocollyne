@@ -345,6 +345,86 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2018-12-27 15:07:11',
                 'updated_at' => '2018-12-27 15:07:11',
             ),
+            41 => 
+            array (
+                'id' => 42,
+                'key' => 'browse_clientes',
+                'table_name' => 'clientes',
+                'created_at' => '2018-12-28 15:47:11',
+                'updated_at' => '2018-12-28 15:47:11',
+            ),
+            42 => 
+            array (
+                'id' => 43,
+                'key' => 'read_clientes',
+                'table_name' => 'clientes',
+                'created_at' => '2018-12-28 15:47:11',
+                'updated_at' => '2018-12-28 15:47:11',
+            ),
+            43 => 
+            array (
+                'id' => 44,
+                'key' => 'edit_clientes',
+                'table_name' => 'clientes',
+                'created_at' => '2018-12-28 15:47:11',
+                'updated_at' => '2018-12-28 15:47:11',
+            ),
+            44 => 
+            array (
+                'id' => 45,
+                'key' => 'add_clientes',
+                'table_name' => 'clientes',
+                'created_at' => '2018-12-28 15:47:11',
+                'updated_at' => '2018-12-28 15:47:11',
+            ),
+            45 => 
+            array (
+                'id' => 46,
+                'key' => 'delete_clientes',
+                'table_name' => 'clientes',
+                'created_at' => '2018-12-28 15:47:11',
+                'updated_at' => '2018-12-28 15:47:11',
+            ),
+            46 => 
+            array (
+                'id' => 47,
+                'key' => 'browse_pedidos',
+                'table_name' => 'pedidos',
+                'created_at' => '2018-12-28 15:47:36',
+                'updated_at' => '2018-12-28 15:47:36',
+            ),
+            47 => 
+            array (
+                'id' => 48,
+                'key' => 'read_pedidos',
+                'table_name' => 'pedidos',
+                'created_at' => '2018-12-28 15:47:36',
+                'updated_at' => '2018-12-28 15:47:36',
+            ),
+            48 => 
+            array (
+                'id' => 49,
+                'key' => 'edit_pedidos',
+                'table_name' => 'pedidos',
+                'created_at' => '2018-12-28 15:47:36',
+                'updated_at' => '2018-12-28 15:47:36',
+            ),
+            49 => 
+            array (
+                'id' => 50,
+                'key' => 'add_pedidos',
+                'table_name' => 'pedidos',
+                'created_at' => '2018-12-28 15:47:36',
+                'updated_at' => '2018-12-28 15:47:36',
+            ),
+            50 => 
+            array (
+                'id' => 51,
+                'key' => 'delete_pedidos',
+                'table_name' => 'pedidos',
+                'created_at' => '2018-12-28 15:47:36',
+                'updated_at' => '2018-12-28 15:47:36',
+            ),
         ));
         
         

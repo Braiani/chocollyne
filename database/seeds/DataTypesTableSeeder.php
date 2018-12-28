@@ -125,6 +125,42 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-12-27 15:07:11',
                 'updated_at' => '2018-12-27 15:07:56',
             ),
+            6 => 
+            array (
+                'id' => 8,
+                'name' => 'clientes',
+                'slug' => 'clientes',
+                'display_name_singular' => 'Cliente',
+                'display_name_plural' => 'Clientes',
+                'icon' => 'voyager-person',
+                'model_name' => 'App\\Cliente',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-12-28 15:47:11',
+                'updated_at' => '2018-12-28 16:07:38',
+            ),
+            7 => 
+            array (
+                'id' => 9,
+                'name' => 'pedidos',
+                'slug' => 'pedidos',
+                'display_name_singular' => 'Pedido',
+                'display_name_plural' => 'Pedidos',
+                'icon' => 'voyager-bag',
+                'model_name' => 'App\\Pedido',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-12-28 15:47:36',
+                'updated_at' => '2018-12-28 16:30:39',
+            ),
         ));
         
         
