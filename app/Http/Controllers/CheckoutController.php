@@ -58,6 +58,8 @@ class CheckoutController extends Controller
         }
         
         $pedido->produtos()->sync($sync_data);
+        session()->forget('desconto');
+        Cookie::queue(Cookie::forget(env('APP_NAME') . '_carrinho'));
         return view('order-placed');
     }
     
