@@ -25,8 +25,9 @@ Route::group(['prefix' => 'carrinho'], function () {
     Route::get('/', 'CarrinhoController@carrinho')->name('cart');
     Route::post('/atualizar', 'CarrinhoController@atualizarCarrinho')->name('update.cart');
     Route::get('/{produto}/remover', 'CarrinhoController@removerCarrinho')->name('delete.cart');
-    Route::post('/{produto}', 'CarrinhoController@adicionarCarrinho')->name('add.cart');
-    Route::get('/finalizar', 'CarrinhoController@finalizar')->name('cart.finish');
+    Route::post('/{produto}/adicionar', 'CarrinhoController@adicionarCarrinho')->name('add.cart');
+    Route::get('/finalizar', 'CheckoutController@finalizar')->name('cart.finish');
+    Route::post('/finalizar', 'CheckoutController@checkout')->name('cart.checkout');
 });
 
 Route::post('/cupom/validar', 'CupomController@validar')->name('cupom.validar');

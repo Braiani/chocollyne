@@ -22,4 +22,9 @@ class Product extends Model
     {
         return $query->where('ativo', true);
     }
+    
+    public function pedidos()
+    {
+        return $this->belongsToMany('App\Pedido', 'pedido_produtos');
+    }
 }

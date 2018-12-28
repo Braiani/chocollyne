@@ -9,19 +9,7 @@
 	</div>
 </div>
 <div class="site-section">
-	@if ($errors->any())
-	<div class="row">
-		<div class="container">
-			<div class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-					<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		</div>
-	</div>
-	@endif
+	@includeWhen($errors->any(), 'layouts.errors')
 	@includeWhen(session()->has('desconto'),'layouts.desconto-alert')
 	@if ($produtos != null)
 	@php

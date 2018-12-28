@@ -124,7 +124,7 @@ return [
             'min' => 'O campo :attribute deve ter pelo menos :min produto.',
         ],
         'qtdade.*' => [
-            'min' => 'O campo :attribute deve conter todos os itens com pelo menos :min.',
+            'min' => 'O campo :attribute deve conter todos os itens com pelo menos :min unidade.',
         ],
         'codigo' => [
             'required' => 'Nenhum cupom de descontos foi informado'
@@ -142,6 +142,9 @@ return [
     */
     'attributes' => [
         'qtdade' => 'quantidade',
-        'qtdade.*' => 'quantidade'
+        'qtdade.*' => 'quantidade',
+        'cpf' => 'CPF',
+        'cep' => 'CEP',
+        'password' => 'senha'
     ],
 ];

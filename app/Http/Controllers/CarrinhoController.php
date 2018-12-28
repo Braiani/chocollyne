@@ -28,11 +28,6 @@ class CarrinhoController extends Controller
         return view('cart')->with(['produtos' => $produtos, 'desconto' => $desconto]);
     }
     
-    public function finalizar()
-    {
-        return view('finalizar');
-    }
-    
     public function adicionarCarrinho(Request $request, $produto)
     {
         $request->validate([
@@ -52,7 +47,7 @@ class CarrinhoController extends Controller
             $data = json_decode($request->cookie(env('APP_NAME') . '_carrinho'));
             if (property_exists($data->items, $produto)) {
                 $data->items->$produto += $request->qtdade;
-            }else{
+            } else {
                 $data->quantidade += 1;
                 $data->items->$produto = $request->qtdade;
             }

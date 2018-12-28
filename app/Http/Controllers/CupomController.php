@@ -23,11 +23,11 @@ class CupomController extends VoyagerBaseController
             $desconto = $desconto->toArray();
             $desconto['validacao'] = true;
             session(['desconto' => $desconto]);
-        }else{
+        } else {
             session([
                 'desconto.validacao' => false
             ]);
         }
-        return redirect()->route('cart');
+        return redirect()->back();
     }
 }
