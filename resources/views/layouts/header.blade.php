@@ -21,7 +21,7 @@
 							<a href="{{ route('admin.home') }}"><span class="icon icon-person"></span></a>
 							@auth('cliente')
 							<a href="{{ route('logout') }}" onclick="event.preventDefault();
-										document.getElementById('logout-form').submit();"><span class="icon icon-remove"></span></a>
+										document.getElementById('logout-form').submit();"><span class="icon icon-sign-out"></span></a>
 							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 								@csrf
 							</form>
