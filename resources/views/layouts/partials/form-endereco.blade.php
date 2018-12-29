@@ -1,4 +1,4 @@
-@auth
+@auth('cliente')
 @php
 	$user = Auth::guard('cliente')->user();
 @endphp
