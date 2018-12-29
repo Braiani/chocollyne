@@ -18,7 +18,7 @@ class Product extends Model
         return $this->belongsTo('App\Categoria');
     }
     
-    public function scopeIsAtivo($query)
+    public function scopeEstaAtivo($query)
     {
         return $query->where('ativo', true);
     }

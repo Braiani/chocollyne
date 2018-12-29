@@ -12,8 +12,8 @@ class PublicController extends Controller
     use ZipCodeTrait;
     public function index()
     {
-        $produtos = Product::isAtivo()->get();
-        $feat = Product::latest()->first();
+        $produtos = Product::estaAtivo()->get();
+        $feat = Product::estaAtivo()->latest()->first();
 
         return view('welcome')->with([
             'feat' => $feat,
