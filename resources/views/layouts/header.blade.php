@@ -19,7 +19,7 @@
 					<ul>
 						<li>
 							<a href="{{ route('admin.home') }}"><span class="icon icon-person"></span></a>
-							@auth
+							@auth('cliente')
 							<a href="{{ route('logout') }}" onclick="event.preventDefault();
 										document.getElementById('logout-form').submit();"><span class="icon icon-remove"></span></a>
 							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -28,7 +28,7 @@
 							@endauth
 						</li>
 						<li>
-							<a href="#"><span class="icon icon-heart-o"></span></a>
+							{{-- <a href="#"><span class="icon icon-heart-o"></span></a> --}}
 						</li>
 						<li>
 						<a href="{{ route('cart') }}" class="site-cart">

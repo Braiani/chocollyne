@@ -31,9 +31,10 @@ class CheckoutController extends Controller
         $cliente = $request->validated();
         $observacao = $cliente['observacao'];
         unset($cliente['observacao']);
-        $cliente['password'] = Hash::make($cliente['password']);
+        !isset($cliente['password']) ?: $cliente['password'] = Hash::make($cliente['password']);
 
-        $newCliente = Cliente::updateOrCreate([
+        $newCliente = Cliente::updateOrCreate(
+            [
                 'cpf' => $cliente['cpf'],
                 'email' => $cliente['email']
             ],
@@ -65,6 +66,12 @@ class CheckoutController extends Controller
         $pedido->produtos()->sync($sync_data);
         session()->forget('desconto');
         Cookie::queue(Cookie::forget(env('APP_NAME') . '_carrinho'));
+        
+        return redirect()->route('cart.thanks');
+    }
+    
+    public function obrigado()
+    {
         return view('order-placed');
     }
     

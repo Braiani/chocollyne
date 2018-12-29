@@ -9,7 +9,7 @@
 					<div class="card-header">Meus pedidos</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table class="table table-hover table-bordered">
+							<table class="table table-responsive table-hover table-bordered">
 								<thead class="table-success">
 									<tr>
 										<th class="">N. Pedido</th>
@@ -27,11 +27,12 @@
 									<tr>
 										<td>#{{ $pedido->id}}</td>
 										<td>
-											<ul>
-											@foreach ($pedido->produtos as $produto)
-												<li>{{ $produto->titulo }} x {{ $produto->pivot->quantidade }}</li>
-											@endforeach
-											</ul>
+										@foreach ($pedido->produtos as $produto)
+											<span class="icon icon-check-circle-o text-success"></span> {{ $produto->titulo }} x {{ $produto->pivot->quantidade }}
+											@if (!$loop->last)
+												<br />
+											@endif
+										@endforeach
 										</td>
 										<td>R$ {{ $pedido->subtotal }}</td>
 										<td>{{ $pedido->desconto != null ? $pedido->desconto->desconto . '%' : 'Sem desconto' }}</td>
@@ -44,6 +45,9 @@
 								</tbody>
 							</table>
 						</div>
+					</div>
+					<div class="card-footer">
+						{{ $pedidos->links() }}
 					</div>
 				</div>
 			</div>

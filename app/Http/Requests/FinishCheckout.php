@@ -32,7 +32,7 @@ class FinishCheckout extends FormRequest
             'endereco' => 'required|string',
             'cidade' => 'required|string',
             'estado' => 'required|string|max:2',
-            'password' => 'required|min:6',
+            'password' => 'nullable|min:6',
             'numero' => 'required|integer',
             'complemento' => 'nullable|string',
             'observacao' => 'nullable|string',

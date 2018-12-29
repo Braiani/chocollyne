@@ -28,6 +28,7 @@ Route::group(['prefix' => 'carrinho'], function () {
     Route::post('/{produto}/adicionar', 'CarrinhoController@adicionarCarrinho')->name('add.cart');
     Route::get('/finalizar', 'CheckoutController@finalizar')->name('cart.finish');
     Route::post('/finalizar', 'CheckoutController@checkout')->name('cart.checkout');
+    Route::get('/obrigado', 'CheckoutController@obrigado')->name('cart.thanks');
 });
 
 Route::post('/cupom/validar', 'CupomController@validar')->name('cupom.validar');

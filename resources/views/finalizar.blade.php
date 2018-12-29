@@ -16,7 +16,7 @@
 	<div class="container">
 		@includeWhen($errors->any(), 'layouts.errors')
 		@includeWhen(session()->has('desconto'),'layouts.desconto-alert')
-		@guest
+		@guest('cliente')
 		<div class="row mb-5">
 			<div class="col-md-12">
 				<div class="border p-4 rounded" role="alert">
