@@ -68,5 +68,13 @@
 				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 			</p>
 		</div>
+		<div class="col-md-12">
+			<p>
+				Direitos autorais &copy;
+				<script>document.write(new Date().getFullYear());</script> 
+				Todos os direitos reservados | Este site foi editado com 
+				<i class="icon-heart" aria-hidden="true"></i> por <a href="https://brtechsistemas.com.br" target="_blank" class="text-primary">BR tech Sistemas</a>
+			</p>
+		</div>
 	</div>
 </div>

@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedido extends Model
 {
+    protected $dates = [
+        'created_at',
+    ];
+    
     protected $guarded = [];
     
     public function desconto()
