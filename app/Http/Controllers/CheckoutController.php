@@ -33,7 +33,12 @@ class CheckoutController extends Controller
         unset($cliente['observacao']);
         $cliente['password'] = Hash::make($cliente['password']);
 
-        $newCliente = Cliente::create($cliente);
+        $newCliente = Cliente::updateOrCreate([
+                'cpf' => $cliente['cpf'],
+                'email' => $cliente['email']
+            ],
+            $cliente
+        );
         
         $subtotal = $this->calcularSubtotal();
         $total = $this->calcularTotal($subtotal);
