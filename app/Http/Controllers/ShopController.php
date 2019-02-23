@@ -10,7 +10,7 @@ class ShopController extends Controller
 {
     public function show(Request $request, $produto)
     {
-        $produto = Product::where('slug', $produto)->first();
+        $produto = Product::estaAtivo()->where('slug', $produto)->first();
         return view('single')->with([
             'produto' => $produto
         ]);
@@ -18,7 +18,7 @@ class ShopController extends Controller
     
     public function pesquisa(Request $request)
     {
-        $produtos = Product::where('titulo', 'LIKE', "%{$request->produto}%")
+        $produtos = Product::estaAtivo()->where('titulo', 'LIKE', "%{$request->produto}%")
                             ->orWhere('descricao', 'LIKE', "%{$request->produto}%")
                             ->paginate();
         $categorias = Categoria::all();
@@ -30,7 +30,7 @@ class ShopController extends Controller
     
     public function showAll()
     {
-        $produtos = Product::paginate();
+        $produtos = Product::estaAtivo()->paginate();
         $categorias = Categoria::all();
 
         return view('shop')->with([
@@ -43,7 +43,7 @@ class ShopController extends Controller
     {
         $categorias = Categoria::all();
         $categoria = Categoria::where('slug', $categoria)->first();
-        $produtos = Product::where('categoria_id', $categoria->id)->paginate();
+        $produtos = Product::estaAtivo()->where('categoria_id', $categoria->id)->paginate();
         return view('shop')->with([
             'produtos' => $produtos,
             'categorias' => $categorias
