@@ -1,47 +1,54 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
-
 /* Base */
 @import "site-base";
 /* Navbar */
 @import "site-navbar";
 /* Blocks */
 @import "site-blocks";
-.background-image{
-	background-repeat:cover;
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: 1;
-	height: 100%;
-	width: 100%;
-	-webkit-filter: blur(15px);
-	filter: blur(15px);
-	-moz-filter: blur(15px);
-	-o-filter: blur(15px);
-	-ms-filter: blur(15px);
+
+.background-image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  /*-webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);*/
 }
-.conteudo{
-	left: 0;
-	right: 0;
-	z-index: 9999;
-	position: fixed;
-	margin-left: 120px;
-	margin-right: 50px;
-	color:#fff;
+
+.feat-text {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5%;
 }
-.img-feat{
-	height: 240px;
+
+.img-feat {
+  height: 240px;
 }
-.img-fluid-shop{
-	width: 100%;
-	height: 240px;
+
+.img-fluid-shop {
+  width: 100%;
+  height: 240px;
 }
-.py-3{
-	border: 1px solid $cyan;
+
+.py-3 {
+  border: 1px solid $cyan;
 }
-.img-fluid-loading{
-	display:none;
-	width:50%;
+
+.img-fluid-loading {
+  display: none;
+  width: 50%;
+}
+
+.btn-block {
+  letter-spacing: normal;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bct {
+  border: 1px solid lightcoral;
 }

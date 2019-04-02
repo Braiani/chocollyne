@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Cliente;
+use App\Observers\ClienteObserver;
+use App\Observers\PedidoObserver;
+use App\Pedido;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Cliente::observe(ClienteObserver::class);
+        Pedido::observe(PedidoObserver::class);
     }
 
     /**
