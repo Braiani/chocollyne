@@ -6,6 +6,7 @@ use App\Cliente;
 use App\Observers\ClienteObserver;
 use App\Observers\PedidoObserver;
 use App\Pedido;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
         Cliente::observe(ClienteObserver::class);
         Pedido::observe(PedidoObserver::class);
     }
