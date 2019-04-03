@@ -193,6 +193,50 @@ class SettingsTableSeeder extends Seeder
                 'order' => 11,
                 'group' => 'Site',
             ),
+            16 => 
+            array (
+                'id' => 17,
+                'key' => 'pagamentos.dinheiro',
+                'display_name' => 'Dinheiro',
+                'value' => 'Pague diretamente a nós em espécie no momento da entrega de seus pedidos.',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 12,
+                'group' => 'Pagamentos',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'key' => 'pagamentos.boleto',
+                'display_name' => 'Boleto Bancário',
+                'value' => 'Pague através de boleto bancário. A entrega somente ocorrerá após a compensação bancária.',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 13,
+                'group' => 'Pagamentos',
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'key' => 'pagamentos.deposito',
+                'display_name' => 'Depósito Bancário',
+                'value' => 'Possuímos conta no Banco do Brasil, Itaú e Caixa Econômica Federal. Solicite essa forma de pagamento e agilize seu pagamento.',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 14,
+                'group' => 'Pagamentos',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'key' => 'pagamentos.cartoes',
+                'display_name' => 'Cartões de Débito/Crédito',
+            'value' => 'Estamos aceitando cartões de débito e crédito. Nessa forma de pagamento será cobrado um adicional de 5% (cinco porcento).',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 15,
+                'group' => 'Pagamentos',
+            ),
         ));
         
         
