@@ -111,21 +111,22 @@
                                 </tbody>
                             </table>
 
-                            <div class="border p-3 mb-3">
-                                <h3 class="h6 mb-0">
-                                    <a class="d-block" data-toggle="collapse" href="#pagamentodinheiro"
-                                       role="button" aria-expanded="false" aria-controls="pagamentodinheiro">
-                                        Pagamento em Espécie
-                                    </a>
-                                </h3>
-                                <div class="collapse" id="pagamentodinheiro">
-                                    <div class="py-2">
-                                        <p class="mb-0">Make your payment directly into our bank account. Please use
-                                            your Order ID as the payment reference. Your order won’t be shipped until
-                                            the funds have cleared in our account.</p>
+                            @if(setting('pagamentos.dinheiro') != null)
+                                <div class="border p-3 mb-3">
+                                    <h3 class="h6 mb-0">
+                                        <a class="d-block" data-toggle="collapse" href="#pagamentodinheiro"
+                                           role="button" aria-expanded="false" aria-controls="pagamentodinheiro">
+                                            Pagamento em Espécie
+                                        </a>
+                                    </h3>
+                                    <div class="collapse" id="pagamentodinheiro">
+                                        <div class="py-2">
+                                            <p class="mb-0">{{ setting('pagamentos.dinheiro') }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+                            @if(setting('pagamentos.boleto') != null)
                             <div class="border p-3 mb-3">
                                 <h3 class="h6 mb-0">
                                     <a class="d-block" data-toggle="collapse" href="#pagamentoboleto"
@@ -135,12 +136,12 @@
                                 </h3>
                                 <div class="collapse" id="pagamentoboleto">
                                     <div class="py-2">
-                                        <p class="mb-0">Make your payment directly into our bank account. Please use
-                                            your Order ID as the payment reference. Your order won’t be shipped until
-                                            the funds have cleared in our account.</p>
+                                        <p class="mb-0">{{ setting('pagamentos.boleto') }}</p>
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            @if(setting('pagamentos.deposito') != null)
                             <div class="border p-3 mb-3">
                                 <h3 class="h6 mb-0">
                                     <a class="d-block" data-toggle="collapse" href="#pagamentodeposito"
@@ -150,12 +151,12 @@
                                 </h3>
                                 <div class="collapse" id="pagamentodeposito">
                                     <div class="py-2">
-                                        <p class="mb-0">Make your payment directly into our bank account. Please use
-                                            your Order ID as the payment reference. Your order won’t be shipped until
-                                            the funds have cleared in our account.</p>
+                                        <p class="mb-0">{{ setting('pagamentos.deposito') }}</p>
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            @if(setting('pagamentos.cartoes') != null)
                             <div class="border p-3 mb-5">
                                 <h3 class="h6 mb-0">
                                     <a class="d-block" data-toggle="collapse" href="#pagamentocartao"
@@ -165,12 +166,11 @@
                                 </h3>
                                 <div class="collapse" id="pagamentocartao">
                                     <div class="py-2">
-                                        <p class="mb-0">Make your payment directly into our bank account. Please use
-                                            your Order ID as the payment reference. Your order won’t be shipped until
-                                            the funds have cleared in our account.</p>
+                                        <p class="mb-0">{{ setting('pagamentos.cartoes') }}</p>
                                     </div>
                                 </div>
                             </div>
+                            @endif
                             <div class="form-group">
                                 <button class="btn btn-primary btn-lg py-3 btn-block" form="form-checkout">Finalizar
                                     Pedido
