@@ -13,7 +13,7 @@ class PublicController extends Controller
     public function index()
     {
         $produtos = Product::estaAtivo()->get();
-        $feat = Product::estaAtivo()->latest()->first();
+        $feat = Product::estaAtivo()->find(3);
 
         return view('welcome')->with([
             'feat' => $feat,

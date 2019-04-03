@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,3 +12,6 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/cep/{cep}', 'PublicController@buscaCep')->name('api.cep');
+Route::get('/pedidos/teste', function () {
+    return \App\Pedido::find(2);
+})->name('api.pedidos');

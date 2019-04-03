@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* Base */
 
 body {
@@ -18,8 +20,7 @@ body {
 }
 
 a {
-  -webkit-transition: .3s all ease;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
 }
 
 a:hover {
@@ -31,8 +32,7 @@ a:hover {
 }
 
 .site-wrap:before {
-  -webkit-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   background: rgba(0, 0, 0, 0.6);
   content: "";
   position: absolute;
@@ -61,18 +61,16 @@ a:hover {
 .btn {
   text-transform: uppercase;
   position: relative;
-  -webkit-transition: 0.2s all ease-in-out !important;
   transition: 0.2s all ease-in-out !important;
   top: 0;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 }
 
 .btn:hover,
 .btn:active,
 .btn:focus {
   outline: none;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .btn.btn-secondary {
@@ -89,12 +87,11 @@ a:hover {
 .btn.btn-primary {
   font-size: 17px;
   font-weight: 300;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 }
 
 .btn:hover {
-  -webkit-box-shadow: 0 5px 20px -7px rgba(0, 0, 0, 0.9) !important;
-          box-shadow: 0 5px 20px -7px rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 5px 20px -7px rgba(0, 0, 0, 0.9) !important;
   top: -2px;
 }
 
@@ -110,8 +107,7 @@ a:hover {
 .form-control:hover,
 .form-control:active,
 .form-control:focus {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .site-section {
@@ -220,7 +216,7 @@ a:hover {
 .site-navbar .site-logo a {
   text-transform: uppercase;
   color: #25262a;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   font-size: 20px;
   padding-left: 10px;
   padding-right: 10px;
@@ -278,13 +274,11 @@ a:hover {
   text-align: center;
   background: #7971ea;
   color: #fff;
-  -webkit-transition: .2s all ease-in-out;
-  transition: .2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
 }
 
 .site-navbar .site-top-icons ul li a:hover .count {
-  -webkit-box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.3) !important;
-          box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 3px 10px -4px rgba(0, 0, 0, 0.3) !important;
   margin-top: -22px;
 }
 
@@ -325,7 +319,7 @@ a:hover {
 .site-navbar .site-navigation .site-menu > li > a {
   padding: 10px 10px;
   text-transform: uppercase;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   color: #25262a;
   font-size: 15px;
   text-decoration: none !important;
@@ -352,7 +346,7 @@ a:hover {
   right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  font-family: 'icomoon';
+  font-family: "icomoon";
 }
 
 .site-navbar .site-navigation .site-menu .has-children .dropdown {
@@ -362,8 +356,7 @@ a:hover {
   position: absolute;
   text-align: left;
   border-top: 2px solid #7971ea;
-  -webkit-box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0px 4px 0px rgba(0, 0, 0, 0.05);
   border-left: 1px solid #edf0f5;
   border-right: 1px solid #edf0f5;
   border-bottom: 1px solid #edf0f5;
@@ -371,7 +364,6 @@ a:hover {
   margin-top: 20px;
   margin-left: 0px;
   background: #fff;
-  -webkit-transition: 0.2s 0s;
   transition: 0.2s 0s;
 }
 
@@ -379,7 +371,6 @@ a:hover {
   font-size: 16px;
   text-transform: none;
   letter-spacing: normal;
-  -webkit-transition: 0s all;
   transition: 0s all;
 }
 
@@ -441,8 +432,7 @@ a:hover {
 .site-navbar .site-navigation .site-menu .has-children:hover > .dropdown,
 .site-navbar .site-navigation .site-menu .has-children:focus > .dropdown,
 .site-navbar .site-navigation .site-menu .has-children:active > .dropdown {
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+  transition-delay: 0s;
   margin-top: 0px;
   visibility: visible;
   opacity: 1;
@@ -458,10 +448,8 @@ a:hover {
   height: calc(100vh);
   -webkit-transform: translateX(110%);
           transform: translateX(110%);
-  -webkit-box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.1);
-          box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.1);
-  -webkit-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
+  box-shadow: -10px 0 20px -10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s all ease-in-out;
 }
 
 .offcanvas-menu .site-mobile-menu {
@@ -489,8 +477,7 @@ a:hover {
   padding-right: 10px;
   line-height: 1;
   cursor: pointer;
-  -webkit-transition: .3s all ease;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
 }
 
 .site-mobile-menu .site-mobile-menu-header .site-mobile-menu-close span:hover {
@@ -507,7 +494,7 @@ a:hover {
   display: inline-block;
   text-transform: uppercase;
   color: #25262a;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   font-size: 20px;
   padding-left: 10px;
   padding-right: 10px;
@@ -580,8 +567,7 @@ a:hover {
   left: 50%;
   -webkit-transform: translate(-50%, -50%) rotate(-180deg);
           transform: translate(-50%, -50%) rotate(-180deg);
-  -webkit-transition: .3s all ease;
-  transition: .3s all ease;
+  transition: 0.3s all ease;
 }
 
 .site-mobile-menu .site-nav-wrap .arrow-collapse.collapsed:before {
@@ -698,7 +684,7 @@ a:hover {
 
 .site-blocks-1 .text h2 {
   color: #25262a;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   font-size: 18px;
 }
 
@@ -713,15 +699,14 @@ a:hover {
 
 .site-blocks-2 .block-2-item:before {
   z-index: 1;
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(18%, transparent), color-stop(99%, rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.8)));
   background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00000000", endColorstr="#cc000000",GradientType=0 );
 }
 
 .site-blocks-2 .block-2-item .image {
@@ -732,8 +717,7 @@ a:hover {
 
 .site-blocks-2 .block-2-item .image img {
   margin-bottom: 0;
-  -webkit-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 .site-blocks-2 .block-2-item .text {
@@ -751,7 +735,7 @@ a:hover {
 
 .site-blocks-2 .block-2-item .text > span {
   font-size: 12px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   font-weight: 900;
 }
 
@@ -794,12 +778,11 @@ a:hover {
 
 .block-3 .owl-nav .owl-prev.disabled,
 .block-3 .owl-nav .owl-next.disabled {
-  opacity: .2;
+  opacity: 0.2;
 }
 
 .block-4 {
-  -webkit-box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px -10px rgba(0, 0, 0, 0.1);
   background: #fff;
 }
 
@@ -944,8 +927,7 @@ a:hover {
 
 .site-block-top-search input {
   padding-left: 40px;
-  -webkit-transition: .3s all ease-in-out;
-  transition: .3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 
 .site-block-top-search input:focus,
@@ -1046,11 +1028,11 @@ a:hover {
 }
 
 .block-38 .block-38-header .block-38-subheading {
-  color: #b3b2b2;
+  color: #b3b3b3;
   margin: 0 0 20px 0;
   text-transform: uppercase;
   font-size: 15px;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 .block-38 .block-38-header img {
@@ -1060,28 +1042,20 @@ a:hover {
 }
 
 .background-image {
-  background-repeat: cover;
   position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  height: 100%;
   width: 100%;
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
-  -moz-filter: blur(15px);
-  -o-filter: blur(15px);
-  -ms-filter: blur(15px);
+  height: 100%;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  /*-webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);*/
 }
 
-.conteudo {
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  position: fixed;
-  margin-left: 120px;
-  margin-right: 50px;
-  color: #fff;
+.feat-text {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5%;
 }
 
 .img-feat {
@@ -1100,5 +1074,16 @@ a:hover {
 .img-fluid-loading {
   display: none;
   width: 50%;
+}
+
+.btn-block {
+  letter-spacing: normal;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bct {
+  border: 1px solid lightcoral;
 }
 

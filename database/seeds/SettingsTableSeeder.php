@@ -127,6 +127,116 @@ class SettingsTableSeeder extends Seeder
                 'order' => 1,
                 'group' => 'Admin',
             ),
+            10 => 
+            array (
+                'id' => 11,
+                'key' => 'info.frete',
+                'display_name' => 'Informações Frete',
+                'value' => 'O frete é um valor fixo de R$ 10,00 para qualquer região de Campo Grande.',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 6,
+                'group' => 'Info',
+            ),
+            11 => 
+            array (
+                'id' => 12,
+                'key' => 'info.cancelamento',
+                'display_name' => 'Cancelamento de reserva',
+                'value' => 'As reservas podem ser canceladas em até 24h do pedido.',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 7,
+                'group' => 'Info',
+            ),
+            12 => 
+            array (
+                'id' => 13,
+                'key' => 'info.duvidas',
+                'display_name' => 'Dúvidas',
+                'value' => 'Qualquer dúvida pode ser encaminhada para o e-mail: admin@admin.com',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 8,
+                'group' => 'Info',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'key' => 'site.endereco',
+                'display_name' => 'Endereço',
+                'value' => 'Rua Loren Ipsun, 458, Campo Grande - MS',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 9,
+                'group' => 'Site',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'key' => 'site.telefone',
+                'display_name' => 'Telefone',
+                'value' => '67981707696',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 10,
+                'group' => 'Site',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'key' => 'site.email',
+                'display_name' => 'E-mail de contato',
+                'value' => 'contato@chocollyne.local',
+                'details' => NULL,
+                'type' => 'text',
+                'order' => 11,
+                'group' => 'Site',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'key' => 'pagamentos.dinheiro',
+                'display_name' => 'Dinheiro',
+                'value' => 'Pague diretamente a nós em espécie no momento da entrega de seus pedidos.',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 12,
+                'group' => 'Pagamentos',
+            ),
+            17 => 
+            array (
+                'id' => 18,
+                'key' => 'pagamentos.boleto',
+                'display_name' => 'Boleto Bancário',
+                'value' => 'Pague através de boleto bancário. A entrega somente ocorrerá após a compensação bancária.',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 13,
+                'group' => 'Pagamentos',
+            ),
+            18 => 
+            array (
+                'id' => 19,
+                'key' => 'pagamentos.deposito',
+                'display_name' => 'Depósito Bancário',
+                'value' => 'Possuímos conta no Banco do Brasil, Itaú e Caixa Econômica Federal. Solicite essa forma de pagamento e agilize seu pagamento.',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 14,
+                'group' => 'Pagamentos',
+            ),
+            19 => 
+            array (
+                'id' => 20,
+                'key' => 'pagamentos.cartoes',
+                'display_name' => 'Cartões de Débito/Crédito',
+            'value' => 'Estamos aceitando cartões de débito e crédito. Nessa forma de pagamento será cobrado um adicional de 5% (cinco porcento).',
+                'details' => NULL,
+                'type' => 'text_area',
+                'order' => 15,
+                'group' => 'Pagamentos',
+            ),
         ));
         
         

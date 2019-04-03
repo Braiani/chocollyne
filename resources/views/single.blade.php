@@ -25,7 +25,7 @@
 				<p>{{ $produto->descricao }}</p>
 				<p><strong>Prazo confecção: </strong>{{ $produto->prazo_confeccao }} dias úteis</p>
 				<p><strong>Quantidade pronta entraga: </strong>{{ $produto->estoque }} unidades</p>
-				<p><strong class="text-primary h4">R$ {{ $produto->preco }}</strong></p>
+				<p><strong class="text-primary h4">R$ {{ $produto->precoFormatted }}</strong></p>
 				{{-- <div class="mb-1 d-flex">
 					<label for="option-sm" class="d-flex mr-3 mb-3">
 						<span class="d-inline-block mr-2" style="top:-2px; position: relative;">
