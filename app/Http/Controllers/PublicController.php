@@ -12,12 +12,11 @@ class PublicController extends Controller
     use ZipCodeTrait;
     public function index()
     {
-        $produtos = Product::estaAtivo()->get();
-        $feat = Product::estaAtivo()->find(3);
+        $produtos = Product::estaAtivo()->latest()->paginate();
+        $feat = Product::estaAtivo()->inRandomOrder()->first();
 
         return view('welcome')->with([
             'feat' => $feat,
-            'produtos' => $produtos,
             'destaques' => $produtos
         ]);
     }
