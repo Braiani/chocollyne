@@ -54,6 +54,7 @@ class CarrinhoController extends Controller
             $this->setCookie(env('APP_NAME') . '_carrinho', json_encode($data));
         }
 
+        toastr('Ítem adicionado ao carrinho com sucesso!', 'success');
         return redirect()->route('cart');
     }
     
@@ -68,6 +69,7 @@ class CarrinhoController extends Controller
         }
         $this->setCookie(env('APP_NAME') . '_carrinho', json_encode($data));
 
+        toastr('Ítens do carrinho atualizados com sucesso!', 'success');
         return redirect()->route('cart');
     }
     
@@ -83,6 +85,7 @@ class CarrinhoController extends Controller
             $this->delCookie(env('APP_NAME') . '_carrinho');
         }
 
+        toastr('Ítem removido do carrinho com sucesso!', 'info');
         return redirect()->route('cart');
     }
     

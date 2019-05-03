@@ -2,6 +2,8 @@
 
 namespace App\Observers;
 
+use App\Cliente;
+use App\Notifications\NewProductAvaliableNotification;
 use App\Product;
 
 class ProductObserver
@@ -14,7 +16,12 @@ class ProductObserver
      */
     public function created(Product $product)
     {
-        //
+        if ($product->ativo){
+            $clientes = Cliente::receberNews()->get();
+            $clientes->each(function ($item, $key) use ($product) {
+                $item->notify(new NewProductAvaliableNotification($product, $item));
+            });
+        }
     }
 
     /**
@@ -25,7 +32,12 @@ class ProductObserver
      */
     public function updated(Product $product)
     {
-        //
+        if ($product->ativo){
+            $clientes = Cliente::receberNews()->get();
+            $clientes->each(function ($item, $key) use ($product) {
+                $item->notify(new NewProductAvaliableNotification($product, $item));
+            });
+        }
     }
 
     /**

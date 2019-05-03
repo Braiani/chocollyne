@@ -13,6 +13,9 @@
 // Rotas para ambiente administrativo usuário comum
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('admin.home');
+Route::get('/perfil', 'ProfileController@index')->name('admin.perfil');
+Route::post('/perfil/{cliente}', 'ProfileController@update')->name('admin.perfil.update');
+Route::get('/perfil/{cliente}/descadastrar-email', 'DescadastrarController')->name('descadastrar.email');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });

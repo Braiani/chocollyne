@@ -15,4 +15,9 @@ class Cliente extends User
     protected $hidden = [
         'password',
     ];
+
+    public function scopeReceberNews($query)
+    {
+        return $query->where('receber_news', true);
+    }
 }
