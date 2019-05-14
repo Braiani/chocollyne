@@ -47,7 +47,7 @@ class PedidoUpdatedNotification extends Notification implements ShouldQueue
                     ->from(setting('site.email'), setting('site.title'))
                     ->subject('Pedido Atualizado - nº ' . $this->pedido->id)
                     ->greeting('Olá ' . $this->pedido->cliente->nome)
-                    ->line('Seu pedido acabou de sofrer uma atualização. Para acompanhar essa atualização, clique no botão abaixo.')
+                    ->line('Seu pedido acabou de ser atualizado. Para acompanhar essa atualização, clique no botão abaixo.')
                     ->action('Minha Conta', route('admin.home'))
                     ->line('Obrigado pela confiança e preferência!')
                     ->salutation('Atenciosamente!');

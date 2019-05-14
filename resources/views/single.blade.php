@@ -23,6 +23,7 @@
 			<div class="col-md-6">
 				<h2 class="text-black">{{ $produto->titulo }}</h2>
 				<p>{{ $produto->descricao }}</p>
+				<p><strong>Sabor: </strong>{{ $produto->sabor }}</p>
 				<p><strong>Prazo confecção: </strong>{{ $produto->prazo_confeccao }} dias úteis</p>
 				<p><strong>Quantidade pronta entraga: </strong>{{ $produto->estoque }} unidades</p>
 				<p><strong class="text-primary h4">R$ {{ $produto->precoFormatted }}</strong></p>

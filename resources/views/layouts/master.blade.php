@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @toastr_css
     @stack('css')
 
 </head>
@@ -48,6 +49,8 @@
 <script src="{{ asset('js/aos.js') }}"></script>
 
 <script src="{{ asset('js/main.js') }}"></script>
+@toastr_js
+@toastr_render
 
 @stack('js')
 

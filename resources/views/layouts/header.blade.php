@@ -20,7 +20,12 @@
                     <ul>
                         <li>
                             <a href="{{ route('admin.home') }}"><span class="icon icon-person"></span></a>
-                            @auth('cliente')
+                        </li>
+                        @auth('cliente')
+                            <li>
+                                <a href="{{ route('admin.perfil') }}"><span class="icon icon-edit"></span></a>
+                            </li>
+                            <li>
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
 										document.getElementById('logout-form').submit();"><span
                                             class="icon icon-sign-out"></span></a>
@@ -28,11 +33,8 @@
                                       style="display: none;">
                                     @csrf
                                 </form>
-                            @endauth
-                        </li>
-                        <li>
-                            {{-- <a href="#"><span class="icon icon-heart-o"></span></a> --}}
-                        </li>
+                            </li>
+                        @endauth
                         <li>
                             <a href="{{ route('cart') }}" class="site-cart">
                                 <span class="icon icon-shopping_cart"></span>

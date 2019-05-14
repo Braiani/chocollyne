@@ -41,12 +41,18 @@
 
             <div class="form-group row mb-5">
                 <div class="col-md-6">
-                    <label for="cep" class="text-black">CEP <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" id="cep" name="cep"
-                           value="{{ isset($user) ? $user->cep : old('cep') }}" placeholder="Digite o CEP" required>
+                    <label for="cep" class="text-black">CEP <span
+                                class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="cep" name="cep" value="{{ isset($user) ? $user->cep : old('cep') }}" placeholder="Digite o CEP"
+                           required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
                     <img src="{{ asset('images/loading.gif') }}" class="img-fluid-loading" id="imgLoading"/>
+                </div>
+                <div class="col-md-3 mt-2">
+                    <label for="news" class="text-black">Receber novidades?</label>
+                    <input id="news" class="form-check" name="news" type="checkbox" data-off-label="Não" data-on-label="Sim" data-on-active-cls="btn-primary"
+                           @if ($user->receber_news or old('news')) checked @endif>
                 </div>
                 <div class="col-md-12">
                     <label for="endereco" class="text-black">Endereço <span class="text-danger">*</span></label>
@@ -105,6 +111,7 @@
 
 @push('js')
     <script src="https://rawgit.com/RobinHerbots/Inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+    <script src="{{ asset('js/bootstrap-checkbox/bootstrap-checkbox.min.js') }}"></script>
     <script>
         function preencherEndereco(data) {
             $("#imgLoading").fadeOut('2500');
@@ -128,6 +135,7 @@
         }
 
         $(document).ready(function () {
+            $('#news').checkboxpicker();
             $("#cpf").inputmask("999.999.999-99");
             $("#cep").inputmask("99999-999");
             $("#telefone").inputmask({
