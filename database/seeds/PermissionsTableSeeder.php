@@ -425,6 +425,46 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2018-12-28 15:47:36',
                 'updated_at' => '2018-12-28 15:47:36',
             ),
+            51 => 
+            array (
+                'id' => 52,
+                'key' => 'browse_flavors',
+                'table_name' => 'flavors',
+                'created_at' => '2019-05-28 00:47:12',
+                'updated_at' => '2019-05-28 00:47:12',
+            ),
+            52 => 
+            array (
+                'id' => 53,
+                'key' => 'read_flavors',
+                'table_name' => 'flavors',
+                'created_at' => '2019-05-28 00:47:12',
+                'updated_at' => '2019-05-28 00:47:12',
+            ),
+            53 => 
+            array (
+                'id' => 54,
+                'key' => 'edit_flavors',
+                'table_name' => 'flavors',
+                'created_at' => '2019-05-28 00:47:12',
+                'updated_at' => '2019-05-28 00:47:12',
+            ),
+            54 => 
+            array (
+                'id' => 55,
+                'key' => 'add_flavors',
+                'table_name' => 'flavors',
+                'created_at' => '2019-05-28 00:47:12',
+                'updated_at' => '2019-05-28 00:47:12',
+            ),
+            55 => 
+            array (
+                'id' => 56,
+                'key' => 'delete_flavors',
+                'table_name' => 'flavors',
+                'created_at' => '2019-05-28 00:47:12',
+                'updated_at' => '2019-05-28 00:47:12',
+            ),
         ));
         
         

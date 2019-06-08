@@ -187,7 +187,7 @@ class SettingsTableSeeder extends Seeder
                 'id' => 16,
                 'key' => 'site.email',
                 'display_name' => 'E-mail de contato',
-                'value' => 'contato@chocollyne.local',
+                'value' => 'contato@chocollyne.tk',
                 'details' => NULL,
                 'type' => 'text',
                 'order' => 11,
@@ -236,6 +236,30 @@ class SettingsTableSeeder extends Seeder
                 'type' => 'text_area',
                 'order' => 15,
                 'group' => 'Pagamentos',
+            ),
+            20 => 
+            array (
+                'id' => 21,
+                'key' => 'sobre.comeco',
+                'display_name' => 'Começo',
+                'value' => '<p>Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabe&ccedil;a. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Casamentiss faiz malandris se pirulit&aacute;. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.</p>
+<p>Quem num gosta di mim que vai ca&ccedil;&aacute; sua turmis! Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Si u mundo t&aacute; muito paradis? Toma um m&eacute; que o mundo vai girarzis!</p>
+<p>Em p&eacute; sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Todo mundo v&ecirc; os porris que eu tomo, mas ningu&eacute;m v&ecirc; os tombis que eu levo! Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. A ordem dos tratores n&atilde;o altera o p&atilde;o duris.</p>',
+                'details' => NULL,
+                'type' => 'rich_text_box',
+                'order' => 16,
+                'group' => 'Sobre',
+            ),
+            21 => 
+            array (
+                'id' => 22,
+                'key' => 'sobre.comeco_imagem',
+                'display_name' => 'Imagem Começo',
+                'value' => 'settings/May2019/N4IM1KU7YsL2oy1ggwyg.jpg',
+                'details' => NULL,
+                'type' => 'image',
+                'order' => 17,
+                'group' => 'Sobre',
             ),
         ));
         

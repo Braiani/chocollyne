@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::where('cliente_id', Auth::user()->id)->paginate();
+        $pedidos = Pedido::where('cliente_id', Auth::user()->id)->with(['produtos'])->paginate();
         return view('home')->with(['pedidos' => $pedidos]);
     }
 }

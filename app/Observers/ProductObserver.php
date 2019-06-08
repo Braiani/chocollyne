@@ -19,7 +19,7 @@ class ProductObserver
         if ($product->ativo){
             $clientes = Cliente::receberNews()->get();
             $clientes->each(function ($item, $key) use ($product) {
-                $item->notify(new NewProductAvaliableNotification($product, $item));
+                $item->notify(new NewProductAvaliableNotification($product, $item, false));
             });
         }
     }
@@ -35,7 +35,7 @@ class ProductObserver
         if ($product->ativo){
             $clientes = Cliente::receberNews()->get();
             $clientes->each(function ($item, $key) use ($product) {
-                $item->notify(new NewProductAvaliableNotification($product, $item));
+                $item->notify(new NewProductAvaliableNotification($product, $item, true));
             });
         }
     }

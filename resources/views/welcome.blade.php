@@ -2,7 +2,7 @@
 
 @section ('feature')
     <div class="site-blocks-cover" style="" data-aos="fade">
-        <img class="background-image" src="{{ Voyager::image($feat->imagem) }}" alt="">
+        <img class="background-image" src="{{ Voyager::image(json_decode($feat->imagem)[0]) }}" alt="">
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0 feat-text">

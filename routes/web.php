@@ -18,6 +18,7 @@ Route::post('/perfil/{cliente}', 'ProfileController@update')->name('admin.perfil
 Route::get('/perfil/{cliente}/descadastrar-email', 'DescadastrarController')->name('descadastrar.email');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::post('/pedidos/table/get', 'PedidoController')->name('voyager.pedidos.table');
 });
 
 
@@ -27,7 +28,7 @@ Route::get('/sobre-nos', 'PagesController@sobre')->name('about');
 Route::group(['prefix' => 'carrinho'], function () {
     Route::get('/', 'CarrinhoController@carrinho')->name('cart');
     Route::post('/atualizar', 'CarrinhoController@atualizarCarrinho')->name('update.cart');
-    Route::get('/{produto}/remover', 'CarrinhoController@removerCarrinho')->name('delete.cart');
+    Route::get('/{produto}/remover/{flavor}', 'CarrinhoController@removerCarrinho')->name('delete.cart');
     Route::post('/{produto}/adicionar', 'CarrinhoController@adicionarCarrinho')->name('add.cart');
     Route::get('/finalizar', 'CheckoutController@finalizar')->name('cart.finish');
     Route::post('/finalizar', 'CheckoutController@checkout')->name('cart.checkout');

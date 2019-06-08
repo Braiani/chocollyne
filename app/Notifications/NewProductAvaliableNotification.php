@@ -13,17 +13,18 @@ class NewProductAvaliableNotification extends Notification implements ShouldQueu
 {
     use Queueable;
 
-    protected $product, $cliente;
+    protected $product, $cliente, $update;
 
     /**
      * Create a new notification instance.
      *
      * @param Product $product
      */
-    public function __construct(Product $product, Cliente $cliente)
+    public function __construct(Product $product, Cliente $cliente, bool $update)
     {
         $this->product = $product;
         $this->cliente = $cliente;
+        $this->update = $update;
     }
 
     /**
@@ -47,13 +48,17 @@ class NewProductAvaliableNotification extends Notification implements ShouldQueu
     {
         $produto = $this->product;
         $cliente = $this->cliente;
+        $update = $this->update;
+
+        $update ? $subject = 'Um produto foi atualizado!' : $subject = 'Um novo produto foi lançado!';
 
         return (new MailMessage)
                 ->from(setting('site.email'), setting('site.title'))
-                ->subject('Um novo produto foi lançado!')
+                ->subject($subject)
                 ->markdown('emails.newProduct', [
                     'produto' => $produto,
-                    'cliente' => $cliente
+                    'cliente' => $cliente,
+                    'atualizacao' => $update
                 ]);
     }
 

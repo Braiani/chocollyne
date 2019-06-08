@@ -32,4 +32,9 @@ class Product extends Model
     {
         return number_format($this->preco, 2, ',', '.');
     }
+
+    public function sabores()
+    {
+        return $this->belongsToMany('App\Flavor');
+    }
 }

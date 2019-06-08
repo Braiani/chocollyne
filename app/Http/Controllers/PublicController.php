@@ -14,6 +14,7 @@ class PublicController extends Controller
     {
         $produtos = Product::estaAtivo()->latest()->paginate();
         $feat = Product::estaAtivo()->inRandomOrder()->first();
+//        $feat = Product::estaAtivo()->latest()->first();
 
         return view('welcome')->with([
             'feat' => $feat,

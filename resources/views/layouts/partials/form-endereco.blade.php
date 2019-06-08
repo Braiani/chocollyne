@@ -52,7 +52,7 @@
                 <div class="col-md-3 mt-2">
                     <label for="news" class="text-black">Receber novidades?</label>
                     <input id="news" class="form-check" name="news" type="checkbox" data-off-label="Não" data-on-label="Sim" data-on-active-cls="btn-primary"
-                           @if ($user->receber_news or old('news')) checked @endif>
+                           @if (isset($user) and ($user->receber_news or old('news'))) checked @endif>
                 </div>
                 <div class="col-md-12">
                     <label for="endereco" class="text-black">Endereço <span class="text-danger">*</span></label>

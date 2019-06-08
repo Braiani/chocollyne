@@ -19,7 +19,7 @@ class Pedido extends Model
     
     public function produtos()
     {
-        return $this->belongsToMany('App\Product', 'pedido_produtos')->withPivot('preco', 'quantidade');
+        return $this->belongsToMany('App\Product', 'pedido_produtos')->withPivot('preco', 'quantidade', 'flavor_id');
     }
 
     public function cliente()

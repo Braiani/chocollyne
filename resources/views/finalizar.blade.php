@@ -62,32 +62,39 @@
                             <table class="table site-block-order-table mb-5">
                                 <thead>
                                 <th>Produto</th>
+                                <th>Sabor</th>
                                 <th>Total</th>
                                 </thead>
                                 <tbody>
                                 @php
-                                    $data = json_decode(Cookie::get(env('APP_NAME') . '_carrinho'));
+                                    $data = json_decode(Cookie::get(env('APP_NAME') . '_carrinho'), true);
                                     $subTotal = 0;
                                 @endphp
                                 @foreach ($produtos as $produto)
-                                    @php
-                                        $subTotal += (real) $produto->preco * (int) $data->items->{$produto->id};
-                                    @endphp
-                                    <tr>
-                                        <td>
-                                            <a href="{{ route('product.show', $produto->slug) }}">{{ $produto->titulo }}</a>
-                                            <strong class="mx-2">x</strong> {{ $data->items->{$produto->id} }}
-                                        </td>
-                                        <td>
-                                            @php
-                                                $totalItem = (real) $produto->preco * (int) $data->items->{$produto->id};
-                                            @endphp
-                                            R$ {{ number_format($totalItem, 2, ',', '.') }}
-                                        </td>
-                                    </tr>
+                                    @foreach ($data['items'][$produto->id] as $flavor => $quantity)
+                                        @php
+                                            $subTotal += (real) $produto->preco * (int) $quantity;
+                                        @endphp
+                                        <tr>
+                                            <td>
+                                                <a href="{{ route('product.show', $produto->slug) }}">{{ $produto->titulo }}</a>
+                                                <strong class="mx-2">x</strong> {{ $quantity }}
+                                            </td>
+                                            <td>
+                                                {{ $flavors->find($flavor)->name }}
+                                            </td>
+                                            <td>
+                                                @php
+                                                    $totalItem = (real) $produto->preco * (int) $quantity;
+                                                @endphp
+                                                R$ {{ number_format($totalItem, 2, ',', '.') }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 @endforeach
                                 <tr>
                                     <td class="text-black font-weight-bold"><strong>Subtotal</strong></td>
+                                    <td></td>
                                     <td class="text-black">R$ {{ number_format($subTotal, 2, ',', '.') }}</td>
                                 </tr>
                                 @if (isset($desconto))
@@ -96,6 +103,7 @@
                                     @endphp
                                     <tr>
                                         <td class="text-black font-weight-bold"><strong>Desconto</strong></td>
+                                        <td></td>
                                         <td class="text-black">
                                             @php
                                                 $desconto = ((real) $subTotal * ((real) $desconto / 100));
@@ -105,8 +113,10 @@
                                 @endif
                                 <tr>
                                     <td class="text-black font-weight-bold"><strong>Total do Pedido</strong></td>
+                                    <td></td>
                                     <td class="text-black font-weight-bold">
-                                        <strong>R$ {{ isset($total) ? number_format($total, 2, ',', '.') : number_format($subTotal, 2, ',', '.') }}</strong></td>
+                                        <strong>R$ {{ isset($total) ? number_format($total, 2, ',', '.') : number_format($subTotal, 2, ',', '.') }}</strong>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -127,49 +137,49 @@
                                 </div>
                             @endif
                             @if(setting('pagamentos.boleto') != null)
-                            <div class="border p-3 mb-3">
-                                <h3 class="h6 mb-0">
-                                    <a class="d-block" data-toggle="collapse" href="#pagamentoboleto"
-                                       role="button" aria-expanded="false" aria-controls="pagamentoboleto">
-                                        Boleto Bancário
-                                    </a>
-                                </h3>
-                                <div class="collapse" id="pagamentoboleto">
-                                    <div class="py-2">
-                                        <p class="mb-0">{{ setting('pagamentos.boleto') }}</p>
+                                <div class="border p-3 mb-3">
+                                    <h3 class="h6 mb-0">
+                                        <a class="d-block" data-toggle="collapse" href="#pagamentoboleto"
+                                           role="button" aria-expanded="false" aria-controls="pagamentoboleto">
+                                            Boleto Bancário
+                                        </a>
+                                    </h3>
+                                    <div class="collapse" id="pagamentoboleto">
+                                        <div class="py-2">
+                                            <p class="mb-0">{{ setting('pagamentos.boleto') }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endif
                             @if(setting('pagamentos.deposito') != null)
-                            <div class="border p-3 mb-3">
-                                <h3 class="h6 mb-0">
-                                    <a class="d-block" data-toggle="collapse" href="#pagamentodeposito"
-                                       role="button" aria-expanded="false" aria-controls="pagamentodeposito">
-                                        Depósito Bancário
-                                    </a>
-                                </h3>
-                                <div class="collapse" id="pagamentodeposito">
-                                    <div class="py-2">
-                                        <p class="mb-0">{{ setting('pagamentos.deposito') }}</p>
+                                <div class="border p-3 mb-3">
+                                    <h3 class="h6 mb-0">
+                                        <a class="d-block" data-toggle="collapse" href="#pagamentodeposito"
+                                           role="button" aria-expanded="false" aria-controls="pagamentodeposito">
+                                            Depósito Bancário
+                                        </a>
+                                    </h3>
+                                    <div class="collapse" id="pagamentodeposito">
+                                        <div class="py-2">
+                                            <p class="mb-0">{{ setting('pagamentos.deposito') }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endif
                             @if(setting('pagamentos.cartoes') != null)
-                            <div class="border p-3 mb-5">
-                                <h3 class="h6 mb-0">
-                                    <a class="d-block" data-toggle="collapse" href="#pagamentocartao"
-                                       role="button" aria-expanded="false" aria-controls="pagamentocartao">
-                                        Cartões de Débito/Crédito
-                                    </a>
-                                </h3>
-                                <div class="collapse" id="pagamentocartao">
-                                    <div class="py-2">
-                                        <p class="mb-0">{{ setting('pagamentos.cartoes') }}</p>
+                                <div class="border p-3 mb-5">
+                                    <h3 class="h6 mb-0">
+                                        <a class="d-block" data-toggle="collapse" href="#pagamentocartao"
+                                           role="button" aria-expanded="false" aria-controls="pagamentocartao">
+                                            Cartões de Débito/Crédito
+                                        </a>
+                                    </h3>
+                                    <div class="collapse" id="pagamentocartao">
+                                        <div class="py-2">
+                                            <p class="mb-0">{{ setting('pagamentos.cartoes') }}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endif
                             <div class="form-group">
                                 <button class="btn btn-primary btn-lg py-3 btn-block" form="form-checkout">Finalizar

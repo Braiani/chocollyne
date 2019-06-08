@@ -27,6 +27,7 @@
                                 <tr>
                                     <th class="product-thumbnail">Imagem</th>
                                     <th class="product-name">Produto</th>
+                                    <th class="product-name">Sabor</th>
                                     <th class="product-price">Preço</th>
                                     <th class="product-quantity">Quantidade</th>
                                     <th class="product-total">Total</th>
@@ -35,50 +36,58 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($produtos as $produto)
-                                    @php
-                                        $subTotal += (real) $produto->preco * (int) $data->items->{$produto->id};
-                                    @endphp
-                                    <tr>
-                                        <td class="product-thumbnail">
-                                            <img src="{{ Voyager::image($produto->imagem) }}" alt="Image"
-                                                 class="img-fluid">
-                                        </td>
-                                        <td class="product-name">
-                                            <h2 class="h5 text-black">
-                                                <a href="{{ route('product.show', $produto->slug) }}">{{ $produto->titulo}}</a>
-                                            </h2>
-                                        </td>
-                                        <td>R$ {{ $produto->precoFormatted }}</td>
-                                        <td>
-                                            <div class="input-group mb-3" style="max-width: 120px;">
-                                                <div class="input-group-prepend">
-                                                    <button class="btn btn-outline-primary js-btn-minus" type="button">
-                                                        &minus;
-                                                    </button>
+                                    @foreach ($data->items->{$produto->id} as $flavor => $quantity)
+                                        @php
+                                            $subTotal += (real) $produto->preco * (int) $quantity;
+                                        @endphp
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                @include('layouts.partials.carousel-images', ['imagens' => $produto->imagem, 'slug' => $produto->slug, 'class' => 'img-fluid-cart'])
+                                                {{--<img src="{{ Voyager::image($produto->imagem) }}" alt="Image"
+                                                     class="img-fluid">--}}
+                                            </td>
+                                            <td class="product-name">
+                                                <h2 class="h5 text-black">
+                                                    <a href="{{ route('product.show', $produto->slug) }}">{{ $produto->titulo}}</a>
+                                                </h2>
+                                            </td>
+                                            <td class="product-name">
+                                                <h2 class="h5 text-black">
+                                                    {{ $flavors->find($flavor)->name }}
+                                                </h2>
+                                            </td>
+                                            <td>R$ {{ $produto->precoFormatted }}</td>
+                                            <td>
+                                                <div class="input-group mb-3" style="max-width: 120px;">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-primary js-btn-minus" type="button">
+                                                            &minus;
+                                                        </button>
+                                                    </div>
+                                                    <input type="text" class="form-control text-center"
+                                                           name="qtdade[{{ $produto->id }}][{{ $flavor }}]"
+                                                           value="{{ $quantity }}"
+                                                           placeholder="" aria-label="Example text with button addon"
+                                                           aria-describedby="button-addon1">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-primary js-btn-plus" type="button">
+                                                            &plus;
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                                <input type="text" class="form-control text-center"
-                                                       name="qtdade[{{ $produto->id }}]"
-                                                       value="{{ $data->items->{$produto->id} }}"
-                                                       placeholder="" aria-label="Example text with button addon"
-                                                       aria-describedby="button-addon1">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-outline-primary js-btn-plus" type="button">
-                                                        &plus;
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            @php
-                                                $totalItem = (real) $produto->preco * (int) $data->items->{$produto->id};
-                                            @endphp
-                                            R$ {{ number_format($totalItem, 2, ',', '.') }}
-                                        </td>
-                                        <td>
-                                            <a href="{{ route('delete.cart', $produto->id) }}"
-                                               class="btn btn-primary btn-sm">X</a>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td>
+                                                @php
+                                                    $totalItem = (real) $produto->preco * (int) $quantity;
+                                                @endphp
+                                                R$ {{ number_format($totalItem, 2, ',', '.') }}
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('delete.cart', [$produto->id, $flavor]) }}"
+                                                   class="btn btn-primary btn-sm">X</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 @endforeach
                                 </tbody>
                             </table>
@@ -174,9 +183,7 @@
             </div>
         @else
             <div class="site-blocks-cover" style="" data-aos="fade">
-                <div class="background-image">
-                    <img src="{{ asset('images/empty-cart.jpg') }}" alt="Carrinho vazio">
-                </div>
+                <img class="background-image" src="{{ asset('images/empty-cart.jpg') }}" alt="Carrinho vazio">
                 <div class="container">
                     <div class="row align-items-start align-items-md-center justify-content-end">
                         <div class="col-md-5 text-center text-md-left pt-5 pt-md-0 feat-text">

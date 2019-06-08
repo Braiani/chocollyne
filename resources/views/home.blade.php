@@ -4,21 +4,21 @@
 <div class="site-section border-bottom" data-aos="fade">
     <div class="row">
 		<div class="container">
-			<div class="col-md-12">
-				<div class="card">
+			<div class="col-12">
+				<div class="card align-content-center">
 					<div class="card-header">Meus pedidos</div>
 					<div class="card-body">
 						<div class="table-responsive">
 							<table class="table table-responsive table-hover table-bordered">
 								<thead class="table-success">
-									<tr>
-										<th class="">N. Pedido</th>
-										<th class="text-center">Produtos</th>
-										<th class="">Subtotal</th>
-										<th class="text-center">Desconto</th>
-										<th class="">Total</th>
+									<tr class="text-center">
+										<th>N. Pedido</th>
+										<th>Produtos</th>
+										<th>Subtotal</th>
+										<th>Desconto</th>
+										<th>Total</th>
 										<th>Data do pedido</th>
-										<th class="text-center">Status</th>
+										<th>Status</th>
 										<th>Atualização Status</th>
 									</tr>
 								</thead>
@@ -26,17 +26,17 @@
 								@foreach ($pedidos as $pedido)
 									<tr>
 										<td>#{{ $pedido->id}}</td>
-										<td>
+										<td class="text-center">
 										@foreach ($pedido->produtos as $produto)
-											<span class="icon icon-check-circle-o text-success"></span> {{ $produto->titulo }} x {{ $produto->pivot->quantidade }}
-											@if (!$loop->last)
-												<br />
-											@endif
+											<p>
+												<span class="icon icon-check-circle-o text-success"></span> {{ $produto->titulo }}
+												( Sabor: {{ $produto->sabores->find($produto->pivot->flavor_id)->name }}) x {{ $produto->pivot->quantidade }}
+											</p>
 										@endforeach
 										</td>
 										<td>R$ {{ $pedido->subtotal }}</td>
-										<td>{{ $pedido->desconto != null ? $pedido->desconto->desconto . '%' : 'Sem desconto' }}</td>
-										<td>R$ {{ $pedido->total }}</td>
+										<td class="text-center">{{ $pedido->desconto != null ? $pedido->desconto->desconto . '%' : 'Sem desconto' }}</td>
+										<td class="text-center">R$ {{ $pedido->total }}</td>
 										<td>{{ $pedido->created_at->format('d/m/Y H:i') }}</td>
 										<td>{{ $pedido->status }}</td>
 										<td>{{ $pedido->updated_at->format('d/m/Y H:i') }}</td>
@@ -56,4 +56,9 @@
 </div>
 @endsection
 @push('css')
+	<style>
+		td {
+			vertical-align: middle !important;
+		}
+	</style>
 @endpush

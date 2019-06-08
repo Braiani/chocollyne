@@ -49,10 +49,7 @@
                             <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                                 <div class="block-4 text-center border">
                                     <figure class="block-4-image">
-                                        <a href="{{ route('product.show', $item->slug) }}">
-                                            <img src="{{ Voyager::image($item->imagem) }}" alt="Image placeholder"
-                                                 class="img-fluid-shop img-shop">
-                                        </a>
+                                        @include('layouts.partials.carousel-images', ['imagens' => $item->imagem, 'slug' => $item->slug, 'class' => 'img-fluid-shop img-shop'])
                                     </figure>
                                     <div class="block-4-text p-4">
                                         <h3><a href="{{ route('product.show', $item->slug) }}">{{ $item->titulo }}</a>

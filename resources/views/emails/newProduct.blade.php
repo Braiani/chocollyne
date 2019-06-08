@@ -9,13 +9,17 @@
     {{-- Body --}}
 # Olá {{ $cliente->nome }}
 
-Conheça nossa novidade:
+@if($atualizacao)
+    Veja nossa atualização:
+@else
+    Conheça nossa novidade:
+@endif
 
-![Produto novo]({{ Voyager::image($produto->imagem) }})
+![Produto novo]({{ Voyager::image(json_decode($produto->imagem)[0]) }})
 @component('mail::table')
-|Produto                | Preço                             | Sabor                 |
+|Produto                | Preço                             | Sabores               |
 |:---------------------:|:---------------------------------:|:---------------------:|
-|{{ $produto->titulo }} | R$ {{ $produto->precoFormatted }} | {{ $produto->sabor }} |
+|{{ $produto->titulo }} | R$ {{ $produto->precoFormatted }} | {{ $produto->sabores->implode('name', ', ') }} |
 @endcomponent
 
 @component('mail::button', ['url' => route('product.show', $produto->slug), 'color' => 'blue'])

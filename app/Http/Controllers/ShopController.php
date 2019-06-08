@@ -10,7 +10,7 @@ class ShopController extends Controller
 {
     public function show(Request $request, $produto)
     {
-        $produto = Product::estaAtivo()->where('slug', $produto)->first();
+        $produto = Product::estaAtivo()->where('slug', $produto)->with('sabores')->first();
         return view('single')->with([
             'produto' => $produto
         ]);
